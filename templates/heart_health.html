@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Heart Health Prediction</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #e0f7fa 0%, #ffffff 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        /* Navbar styling */
+        .navbar {
+            background-color: #0097A7;
+            padding: 15px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: white;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+        .navbar h2 {
+            margin: 0;
+            font-size: 24px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+        .navbar h2 span {
+            margin-right: 10px;
+            font-size: 28px;
+        }
+        /* Main Content */
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: calc(100vh - 70px);
+            padding: 20px;
+        }
+        h1 {
+            color: #00796B;
+            margin-bottom: 20px;
+            animation: fadeInDown 1s ease-out;
+        }
+        form {
+            background: white;
+            padding: 30px 40px;
+            border-radius: 15px;
+            box-shadow: 0px 8px 20px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 500px;
+            animation: fadeInUp 1s ease-out;
+        }
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #b2ebf2;
+            border-radius: 8px;
+            background-color: #f1fefe;
+        }
+        input[type="submit"] {
+            width: 100%;
+            background-color: #00796B;
+            color: white;
+            padding: 14px;
+            margin-top: 15px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        input[type="submit"]:hover {
+            background-color: #00695C;
+        }
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <h2><span>🩺</span> HeartCare Predictor</h2>
+    </div>
+
+    <div class="container">
+        <h1>Predict Your Heart Health 💖</h1>
+
+        <form action="/predict" method="post">
+            <input type="number" name="age" placeholder="Your Age (in years)" required>
+            <input type="text" name="gender" placeholder="Gender (Male/Female)" required>
+            <input type="text" name="chestpain" placeholder="Do you feel Chest Pain? (Yes/No/Type)" required>
+            <input type="number" name="restingbp" placeholder="Your Blood Pressure (at rest)" required>
+            <input type="number" name="cholesterol" placeholder="Your Cholesterol Level (mg/dL)" required>
+            <input type="number" name="fastingbs" placeholder="Is your Fasting Sugar > 120 mg/dL? (0 = No, 1 = Yes)" required>
+            <input type="text" name="restingecg" placeholder="ECG Result (Normal / Minor Issue / Severe Issue)" required>
+            <input type="number" name="maxhr" placeholder="Your Maximum Heart Rate (during exercise)" required>
+            <input type="text" name="exerciseangina" placeholder="Chest Pain during Exercise? (Yes/No)" required>
+            <input type="number" step="any" name="oldpeak" placeholder="Oldpeak (Depression after Exercise)" required>
+            <input type="text" name="stslope" placeholder="Slope after Exercise (Up/Flat/Down)" required>
+
+            <input type="submit" value="Predict Heart Health">
+        </form>
+    </div>
+
+</body>
+</html>
